@@ -160,6 +160,7 @@ exports.getUser = function(req, res) {
 
 }
 
+
 exports.updateUser = function(req, res) {
 
     User.updateOne({ _id: req.params.id }, req.body)
@@ -179,7 +180,8 @@ exports.updateUser = function(req, res) {
                                 zipcode:        user.zipcode,
                                 city:           user.city,
                                 country:        user.country,
-                                email:          user.email
+                                email:          user.email,
+                                //password:      hash
                             } 
             }) 
         )
@@ -192,7 +194,7 @@ exports.updateUser = function(req, res) {
             error: error
         })
     })  
-}
+} 
 
 exports.deleteUser = function(req, res) {
     User.deleteOne({ _id: req.params.id })

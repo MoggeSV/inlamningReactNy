@@ -6,6 +6,8 @@ import Profile from './components/views/Profile';
 import Login from './components/views/Login';
 import Register from './components/views/Register';
 import Home from './components/views/Home';
+import Customers from './components/views/Customers';
+import Issues from './components/views/Issues';
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
         <Route exact path="/profile" component={ Profile } />
         <Route exact path="/login" component={ Login } />
         <Route exact path="/register" component={ Register } />
+        <Route exact path="/customers" component={ Customers } />
+        <Route exact path="/issues" component={ Issues } />
       </Switch>
     </div>
   );

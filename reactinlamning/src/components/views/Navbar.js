@@ -47,13 +47,19 @@ class Navbar extends Component {
                         <li className="nav-item">
                         <NavLink exact to="/" activeClassName="active" className="nav-link" href="/">Hem</NavLink>
                         </li>
+                        <li className="nav-item">
+                        <NavLink exact to="/customers" activeClassName="active" className="nav-link" href="/">Kunder</NavLink>
+                        </li>
+                        <li className="nav-item">
+                        <NavLink exact to="/issues" activeClassName="active" className="nav-link" href="/">Ärenden</NavLink>
+                        </li>
                     </ul>
                     <ul className="navbar-nav mr-5">
                     <li className="nav-item">
                         <NavLink exact to="/profile" activeClassName="active" className="nav-link" href="/profile">{this.props.user.firstname} {this.props.user.lastname}</NavLink>
                         </li> 
                         <li className="nav-item">
-                        <NavLink exact to="/" activeClassName="active" className="nav-link" href="/" onClick={this.props.logout}>Logga ut <i class="fas fa-sign-out-alt"></i></NavLink>
+                        <NavLink className="nav-link" href="/" onClick={this.props.logout}>Logga ut <i class="fas fa-sign-out-alt"></i></NavLink>
                         </li>
                     </ul>
                 </div>
