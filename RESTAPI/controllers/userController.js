@@ -32,7 +32,9 @@ exports.register = function(req, res) {
 
                                 _id:            new db.Types.ObjectId,
                                 firstname:      req.body.firstname,
+                                middlename:     req.body.middlename,
                                 lastname:       req.body.lastname,
+                                birthday:       req.body.birthday,
                                 addressline:    req.body.addressline,
                                 zipcode:        req.body.zipcode,
                                 city:           req.body.city,
@@ -100,7 +102,9 @@ exports.login = function(req, res) {
                             currentUser: {
                                             _id:            user._id,
                                             firstname:      user.firstname,
+                                            middlename:     user.middlename,
                                             lastname:       user.lastname,
+                                            birthday:       user.birthday,
                                             addressline:    user.addressline,
                                             zipcode:        user.zipcode,
                                             city:           user.city,
@@ -168,7 +172,9 @@ exports.updateUser = function(req, res) {
                 currentUser: {
                                 _id:            user._id,
                                 firstname:      user.firstname,
+                                middlename:     user.middlename,
                                 lastname:       user.lastname,
+                                birthday:       user.birthday,
                                 addressline:    user.addressline,
                                 zipcode:        user.zipcode,
                                 city:           user.city,

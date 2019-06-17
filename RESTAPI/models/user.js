@@ -4,7 +4,9 @@ const userSchema = db.Schema({
 
     _id:            db.Schema.Types.ObjectId,
     firstname:      { type: String, required: true },
+    middlename:     { type: String, required: false },
     lastname:       { type: String, required: true },
+    birthday:       { type: String, required: true },
     addressline:    { type: String, required: true },
     zipcode:        { type: String, required: true },
     city:           { type: String, required: true },
