@@ -59,7 +59,7 @@ class Navbar extends Component {
                         <NavLink exact to="/profile" activeClassName="active" className="nav-link" href="/profile">{this.props.user.firstname} {this.props.user.lastname}</NavLink>
                         </li> 
                         <li className="nav-item">
-                        <NavLink className="nav-link" href="/" onClick={this.props.logout}>Logga ut <i class="fas fa-sign-out-alt"></i></NavLink>
+                        <NavLink exact to="/" className="nav-link" href="/" onClick={this.props.logout}>Logga ut <i class="fas fa-sign-out-alt"></i></NavLink>
                         </li>
                     </ul>
                 </div>

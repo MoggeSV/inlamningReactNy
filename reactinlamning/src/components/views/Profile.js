@@ -77,6 +77,7 @@ class Profile extends Component {
 
         return(
             <div className="container mt-5">
+                <h3 className="mt-5 mb-5">Din profil</h3>
                 <form>
                     <button type="button" className="btn btn-primary btn-sm px-2 mb-5 " onClick={this.toggleEdit}>Ändra</button>
                     <div className="form-row">

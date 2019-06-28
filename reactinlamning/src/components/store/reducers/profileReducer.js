@@ -16,6 +16,12 @@ const profileReducer = (state = initialState, action) => {
                 loggedIn: action.loggedIn
             }
 
+            case actiontype.LOGIN_FAILED:
+            return {
+                state: undefined
+                
+            }
+
         case actiontype.LOGOUT_SUCCESS:
             return {
                 state: undefined

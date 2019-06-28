@@ -13,14 +13,25 @@ export const login = (credentials) => dispatch => {
     })
     .then(res => res.json())
     .then(res => {
-        sessionStorage.setItem('jwt', res.token)
-        sessionStorage.setItem('user', JSON.stringify(res.currentUser))
+        if (res.success) {
+            sessionStorage.setItem('jwt', res.token)
+            sessionStorage.setItem('user', JSON.stringify(res.currentUser))
+            sessionStorage.removeItem('message')
 
         dispatch({
             type: actiontype.LOGIN_SUCCESS,
             user: JSON.parse(sessionStorage.getItem('user')),
             loggedIn: true
         })
+        } else {
+            sessionStorage.setItem('message', res.message)
+
+            dispatch({
+                type: actiontype.LOGIN_FAILED,
+                loggedIn: false
+            })
+        }
+        
 
 
     })
@@ -35,6 +46,7 @@ export const logout = () => dispatch => {
 
     sessionStorage.removeItem('jwt')
     sessionStorage.removeItem('user')
+    sessionStorage.removeItem('currentCustomer')
 
 }
 
@@ -78,7 +90,7 @@ export const update = (user, jwt) => dispatch => {
     .then(res => {
         
         sessionStorage.setItem('user', JSON.stringify(res.currentUser))
-
+        
         dispatch({
             type: actiontype.UPDATE_PROFILE_SUCCESS,
             user: JSON.parse(sessionStorage.getItem('user'))

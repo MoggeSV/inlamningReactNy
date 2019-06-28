@@ -4,6 +4,7 @@ const Customer = require('../models/customer');
 // unrestricted
 exports.getCustomers = (req, res) => {
     Customer.find().then(data => res.status(200).json(data))
+    console.log("api funktionen getCustomers körs");
 }
 
 exports.getCustomerById = (req, res) => {   
@@ -15,9 +16,16 @@ exports.createCustomer = (req, res) => {
     const customer = new Customer(
         {
             _id:        new db.Types.ObjectId,
-            firstname:  req.body.firstname,
-            lastname:   req.body.lastname,
-            address:    req.body.address
+            firstname:     req.body.firstname,
+            lastname:      req.body.lastname,
+            company:       req.body.company,
+            addressline:   req.body.addressline,
+            zipcode:       req.body.zipcode,
+            city:          req.body.city,
+            country:       req.body.country,
+            email:         req.body.email,
+            phone:         req.body.phone 
+            
         }
     ) 
 
@@ -25,14 +33,15 @@ exports.createCustomer = (req, res) => {
     .then(() => {
         res.status(201).json({
             message: 'Kunden skapades',
-            data: customer
-            
+            data: customer,
+            success: true
         })
     })
     .catch((error) => {
         res.status(500).json({
             message: 'Kunden kunde inte skapades',
-            error: error
+            error: error,
+            success: false
         })
     })
 

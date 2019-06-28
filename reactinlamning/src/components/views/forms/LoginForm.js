@@ -15,6 +15,8 @@ class LoginForm extends Component {
                     </div>
                     <button type="submit" className="btn btn-primary">Logga in</button>
                 </form>
+                <br />
+                <h4>Meddelande: <strong>{sessionStorage.message}</strong></h4>
             </div>
         )
     }
